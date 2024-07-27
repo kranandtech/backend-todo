@@ -2,8 +2,10 @@ const todoModel = require("../models/todoModel");
 
 const createTodo = async (req,res)=>{
     try {
-        const todo = req.body;
-        const newTodo = await todoModel.create(todo);
+        const titlecode = 123;
+        const newBody = {titlecode,...req.body
+        };
+        const newTodo = await todoModel.create(newBody);
         res.status(201);
         res.json({
             status:"success",
